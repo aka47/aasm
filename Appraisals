@@ -53,6 +53,7 @@ appraise 'rails_6.1' do
   gem 'redis-objects'
   gem "after_commit_everywhere", "~> 1.0"
   gem 'sqlite3', platforms: :jruby
+  gem 'jdbc-sqlite3', platforms: :jruby
 end
 
 appraise 'norails' do
