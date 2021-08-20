@@ -14,6 +14,7 @@ jobs:
         os:
           - ubuntu-20.04
         ruby:
+          - ruby-head
           - 3.0
           - 2.7
           - 2.6
@@ -28,6 +29,16 @@ jobs:
           - rails_5.2
           - rails_6.1
         exclude:
+        - ruby: ruby-head
+          gemfile: rails_5.2
+        - ruby: ruby-head
+          gemfile: rails_5.1
+        - ruby: ruby-head
+          gemfile: rails_5.0
+        - ruby: ruby-head
+          gemfile: rails_4.2
+        - ruby: ruby-head
+          gemfile: rails_4.2_mongoid_5
         - ruby: 3.0
           gemfile: rails_5.2
         - ruby: 3.0
@@ -62,14 +73,14 @@ jobs:
           gemfile: rails_5.2
         - ruby: jruby-9.1.17.0
           gemfile: rails_6.1
-       include:
+        include:
           # Failures permitted on latest ruby but useful for visibility
-          - allow_failure: true
-            ruby: ruby-head
-            gemfile: rails_6.1
-          - allow_failure: true
-            ruby: truffleruby
-            gemfile: rails_6.1
+        - allow_failure: true
+          ruby: ruby-head
+          gemfile: rails_6.1
+            # - allow_failure: true
+            #   ruby: truffleruby
+            #   gemfile: rails_6.1
         redis-version: [6]
         mongodb-version: ['4.4']
         allow_failures:
