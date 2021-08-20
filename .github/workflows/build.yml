@@ -62,6 +62,14 @@ jobs:
           gemfile: rails_5.2
         - ruby: jruby-9.1.17.0
           gemfile: rails_6.1
+       include:
+          # Failures permitted on latest ruby but useful for visibility
+          - allow_failure: true
+            ruby: ruby-head
+            gemfile: rails_6.1
+          - allow_failure: true
+            ruby: truffleruby
+            gemfile: rails_6.1
         redis-version: [6]
         mongodb-version: ['4.4']
         allow_failures:
