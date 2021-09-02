@@ -41,6 +41,10 @@ jobs:
           gemfile: rails_4.2
         - ruby: truffleruby
           gemfile: rails_4.2_mongoid_5
+        include:
+        - ruby: 2.6
+          gemfile: rails_4.2_nobrainer.gemfile
+          allow_failure: true
         redis-version: [6]
         mongodb-version: [5]
         allow_failures:
